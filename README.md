@@ -47,15 +47,15 @@ pip3 install -r requirements.txt
 
 >**models/**: Baseline models (LSTM, CNN, PCNN, ContextAware) in `baselines.py` and  GPGNN model in `our_models.py`.
 >
->**parsing/**: APIs to convert graphs into Tensors which can be fed into our models.
->
->**result/**: used to store models and output results on the testset. 
+>**parsing/**: APIs to convert graphs into tensors which can be fed into our models.
 >
 >**semanticgraph/**: APIs to construct relation graphs from sentences.
 >
->**utils/**: APIs to load word embeddings, evaluate and operate the graphs.
+>**utils/**: APIs to load word embeddings, evaluate, and operate the graphs.
 >
->**model_param.json**: Hyper parameters for the models.
+>**result/**: Storage area for models and output results on the test set. 
+>
+>**model_param.json**: Hyper parameters for the GPGNN model.
 
 
 
@@ -83,8 +83,5 @@ python3 test.py
 cd result
 python3 test_accuracy.py --input (result_file_path)
 ```
-
-
-
 
 
