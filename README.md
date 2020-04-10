@@ -17,7 +17,7 @@ Please cite our paper if you find it helpful.
 }
 ```
 
-This repository is mainly contributed by [Hao Zhu](http://www.zhuhao.me/), Daniil Sorokin.
+This repository is mainly contributed by [Hao Zhu](http://www.zhuhao.me/), Chaojun Xiao. And this repository is developed based on [ContextAware](https://github.com/UKPLab/emnlp2017-relation-extraction).
 
 
 
