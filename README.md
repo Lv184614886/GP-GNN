@@ -45,7 +45,7 @@ pip3 install -r requirements.txt
 
 ### Directory structure
 
->**models/**: baseline models (LSTM, CNN, PCNN, ContextAware) in `baselines.py` and  GPGNN model in `our_models.py`.
+>**models/**: Baseline models (LSTM, CNN, PCNN, ContextAware) in `baselines.py` and  GPGNN model in `our_models.py`.
 >
 >**parsing/**: APIs to convert graphs into Tensors which can be fed into our models.
 >
@@ -54,18 +54,22 @@ pip3 install -r requirements.txt
 >**semanticgraph/**: APIs to construct relation graphs from sentences.
 >
 >**utils/**: APIs to load word embeddings, evaluate and operate the graphs.
+>
+>**model_param.json**: Hyper parameters for the models.
+
+
 
 ### Running
 
-**training**:
+**train**:
 
-The parameters of the function `main` are set in function `main_config`. You can modify the parameters in `main_config` to train different models. And the hyper-parameters for the `GPGNN` model are stored in `model_params.json`.
+The parameters of the function `main` are set in function `main_config`. You can modify the parameters in `main_config` to train different models. And the hyper parameters for the models are stored in `model_params.json`.
 
 ```bash
 python3 train.py
 ```
 
-**testing**:
+**test**:
 
 Before testing, you should choose proper version of the model by modifing the `load_model` in `main_config`.
 
@@ -73,7 +77,7 @@ Before testing, you should choose proper version of the model by modifing the `l
 python3 test.py
 ```
 
-**evaluation**:
+**evaluate**:
 
 ```bash
 cd result
