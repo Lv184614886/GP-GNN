@@ -1,9 +1,3 @@
-# coding: utf-8
-# Copyright (C) 2016 UKP lab
-#
-# Author: Daniil Sorokin (ukp.tu-darmstadt.de/ukp-home/)
-#
-
 
 def evaluate_batch_based(predicted_batch, gold_batch, threshold = 1.0, idx2label=None, empty_label = None):
     if len(predicted_batch) != len(gold_batch):
