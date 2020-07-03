@@ -2,8 +2,8 @@ import torch
 from torch import nn
 from torch.autograd import Variable
 import sys
-sys.path.insert(0, '..')
-from relation_extraction.parsing.legacy_sp_models import MAX_EDGES_PER_GRAPH
+#sys.path.insert(0, '..')
+from parsing.legacy_sp_models import MAX_EDGES_PER_GRAPH
 from utils.build_adjecent_matrix import adjecent_matrix
 from models.layers import GraphConvolution
 from utils.embedding_utils import make_start_embedding, get_head_indices, get_tail_indices
@@ -195,7 +195,8 @@ class GPGNN(nn.Module):
                         raise NotImplementedError
                 layer_result = layer_tmp.view(
                     sentence_input.size()[0], 72, self.p['embedding_dim'] * 18)
-
+                
+                #from IPython import embed; embed()
                 heads = torch.gather(layer_result, 2, self.head_indices)
                 tails = torch.gather(layer_result, 2, self.tail_indices)
                 relation_list.append(heads * tails)

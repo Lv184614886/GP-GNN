@@ -1,3 +1,8 @@
+# coding: utf-8
+# Copyright (C) 2016 UKP lab
+#
+# Author: Daniil Sorokin (ukp.tu-darmstadt.de/ukp-home/)
+#
 import itertools
 import numpy as np
 np.random.seed(1)
@@ -6,15 +11,15 @@ import tqdm
 import sys
 import pdb
 
-sys.path.insert(0, '..') 
-sys.path.insert(0, '../..') # maybe troublesome when on windows
+#sys.path.insert(0, '..') 
+#sys.path.insert(0, '../..') # maybe troublesome when on windows
 
 
-from relation_extraction.utils import embedding_utils, graph
-from relation_extraction.semanticgraph import graph_utils
+from utils import embedding_utils, graph
+from semanticgraph import graph_utils
 from utils.conversion_util import calculate_order_conversion
 
-RESOURCES_FOLDER = "../resources/"
+RESOURCES_FOLDER = "resources/"
 property_blacklist = embedding_utils.load_blacklist(RESOURCES_FOLDER + "property_blacklist.txt")
 
 def get_negative_edges(g, limit=1):

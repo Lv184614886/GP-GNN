@@ -1,8 +1,14 @@
+# coding: utf-8
+# Copyright (C) 2016 UKP lab
+#
+# Author: Daniil Sorokin (ukp.tu-darmstadt.de/ukp-home/)
+# 
 # Embeddings and vocabulary utility methods
 
 import numpy as np
 import re
 import logging
+import json
 logger = logging.getLogger()
 logging.basicConfig()
 logger.setLevel(logging.ERROR)
@@ -15,6 +21,7 @@ special_tokens = {"&ndash;": "–",
                   "@card@": "0"
                   }
 
+model_params = json.load(open('model_params.json', 'r'))
 
 def load_word_index(path):
     """
@@ -189,7 +196,7 @@ def get_head_indices(n, d):
                 for k in range(n):
                     if(k == i):
                         indices += [range(k * d * 2, k * d * 2 + d * 2)]
-    return [indices] * 50
+    return [indices] * model_params['batch_size']
 
 def get_tail_indices(n, d):
     indices = []
@@ -199,4 +206,4 @@ def get_tail_indices(n, d):
                 for k in range(n):
                     if(k == j):
                         indices += [range(k * d * 2, k * d * 2 + d * 2)]
-    return [indices] * 50
+    return [indices] * model_params['batch_size']

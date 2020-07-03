@@ -2,8 +2,7 @@ import torch
 from torch import nn
 from torch.autograd import Variable
 import sys
-sys.path.insert(0, '..')
-from relation_extraction.parsing.legacy_sp_models import MAX_EDGES_PER_GRAPH
+from parsing.legacy_sp_models import MAX_EDGES_PER_GRAPH
 import torch.nn.functional as F
 
 
